@@ -1,0 +1,355 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebApplication1</name>
+    </assembly>
+    <members>
+        <member name="T:WebApplication1.Database.DatabaseManager`1">
+            <summary>
+            Allow to manage any elements from model to DB.
+            </summary>
+        </member>
+        <member name="F:WebApplication1.Database.DatabaseManager`1.CONNECTION_NAME">
+            <summary>
+            Represent connection string in Web.config.
+            </summary>
+        </member>
+        <member name="M:WebApplication1.Database.DatabaseManager`1.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Database.DatabaseManager`1.DbSetT">
+            <summary>
+            Represent DB table of T item.
+            </summary>
+        </member>
+        <member name="M:WebApplication1.Database.DatabaseManager`1.Insert(`0)">
+            <summary>
+            Insert item in database replacing is id.
+            </summary>
+            <param name="item">Any item if it is a DBBaseClass.</param>
+            <returns>async Task containing the T item.</returns>
+        </member>
+        <member name="M:WebApplication1.Database.DatabaseManager`1.Update(`0)">
+            <summary>
+            Update item object in DB.
+            </summary>
+            <param name="item">Any item if it is a DBBaseClass.</param>
+            <returns>async Task containing the T item.</returns>
+        </member>
+        <member name="M:WebApplication1.Database.DatabaseManager`1.Delete(`0)">
+            <summary>
+            Delete DB item.
+            </summary>
+            <param name="item">Any item if it is a DBBaseClass.</param>
+            <returns>async Task containing integer value of suppress item.</returns>
+        </member>
+        <member name="M:WebApplication1.Database.DatabaseManager`1.Get(System.Int32)">
+            <summary>
+            Get an item from is Id
+            </summary>
+            <param name="id">Id to select in DB.</param>
+            <returns>Selected item as a task of item type.</returns>
+        </member>
+        <member name="T:WebApplication1.Database.DBInitializer">
+            <summary>
+            Use to build DB first time it called.
+            </summary>
+        </member>
+        <member name="M:WebApplication1.Database.DBInitializer.#ctor(System.String)">
+            <summary>
+            Default constructor.
+            </summary>
+            <param name="database">DB to target.</param>
+        </member>
+        <member name="M:WebApplication1.Database.DBInitializer.InitDB">
+            <summary>
+            Create database if not already exist.
+            </summary>
+        </member>
+        <member name="T:WebApplication1.Models.DBBaseClass">
+            <summary>
+            Manage id for item DB relations.
+            </summary>
+        </member>
+        <member name="M:WebApplication1.Models.DBBaseClass.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Models.DBBaseClass.Id">
+            <summary>
+            DB id.
+            </summary>
+        </member>
+        <member name="T:WebApplication1.Models.OGameBitCoinMine">
+            <summary>
+            Define a specific usable Bit Coin Mine.
+            </summary>
+        </member>
+        <member name="M:WebApplication1.Models.OGameBitCoinMine.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="T:WebApplication1.Models.OGameColonizer">
+            <summary>
+            Space ship use to colonize planet.
+            </summary>
+        </member>
+        <member name="M:WebApplication1.Models.OGameColonizer.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="T:WebApplication1.Models.OGameCoordinate">
+            <summary>
+            Define position of an element in our univers.
+            </summary>
+        </member>
+        <member name="M:WebApplication1.Models.OGameCoordinate.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Models.OGameCoordinate.Y">
+            <summary>
+            Y coordinate.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Models.OGameCoordinate.X">
+            <summary>
+            X coordinate.
+            </summary>
+        </member>
+        <member name="T:WebApplication1.Models.OGameFleet">
+            <summary>
+            Define a fleet landing on a planet or traveling to a planet.
+            </summary>
+        </member>
+        <member name="M:WebApplication1.Models.OGameFleet.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Models.OGameFleet.SpaceShips">
+            <summary>
+            Fleet space ships.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Models.OGameFleet.Name">
+            <summary>
+            Name of the fleet.
+            </summary>
+        </member>
+        <member name="T:WebApplication1.Models.OGameGoldMine">
+            <summary>
+            Define a specific usable Gold Mine.
+            </summary>
+        </member>
+        <member name="M:WebApplication1.Models.OGameGoldMine.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="T:WebApplication1.Models.OGamePlanet">
+            <summary>
+            Define a user planet where landing building.
+            </summary>
+        </member>
+        <member name="M:WebApplication1.Models.OGamePlanet.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Models.OGamePlanet.Id">
+            <summary>
+            Override default DBBaseClass id to setup new properties.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Models.OGamePlanet.Fleet">
+            <summary>
+            Current landing planet fleet.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Models.OGamePlanet.Resources">
+            <summary>
+            Different resources contains by planet.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Models.OGamePlanet.Buildings">
+            <summary>
+            Planet buildings.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Models.OGamePlanet.CoordinateId">
+            <summary>
+            Link Coordinate item with is id.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Models.OGamePlanet.Coordinate">
+            <summary>
+            Planet position in univers.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Models.OGamePlanet.Image">
+            <summary>
+            Picture of current planet.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Models.OGamePlanet.Slot">
+            <summary>
+            Define number of building for current planet.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Models.OGamePlanet.Name">
+            <summary>
+            Current name given by player to his planet.
+            </summary>
+        </member>
+        <member name="T:WebApplication1.Models.OGameResource">
+            <summary>
+            Game resources to buy things.
+            </summary>
+        </member>
+        <member name="M:WebApplication1.Models.OGameResource.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Models.OGameResource.Type">
+            <summary>
+            Resource type name.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Models.OGameResource.Quantity">
+            <summary>
+            Quantity of current resource.
+            </summary>
+        </member>
+        <member name="T:WebApplication1.Models.OGameSpaceShip">
+            <summary>
+            Default class to create specialized space ship.
+            </summary>
+        </member>
+        <member name="M:WebApplication1.Models.OGameSpaceShip.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Models.OGameSpaceShip.ShipType">
+            <summary>
+            Allow to reconize the different ship type in DB.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Models.OGameSpaceShip.Quantity">
+            <summary>
+            Number of this ship type.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Models.OGameSpaceShip.Bay">
+            <summary>
+            Quantity of carriable resources.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Models.OGameSpaceShip.Speed">
+            <summary>
+            Speed to navigate between planet.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Models.OGameSpaceShip.Defence">
+            <summary>
+            Defence that reduce other space ship damage.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Models.OGameSpaceShip.Attack">
+            <summary>
+            Attack to destroy other space ship
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Models.OGameSpaceShip.Name">
+            <summary>
+            Name of space ship class.
+            </summary>
+        </member>
+        <member name="T:WebApplication1.Models.OGameStarport">
+            <summary>
+            Define a specific usable Starport building.
+            </summary>
+        </member>
+        <member name="M:WebApplication1.Models.OGameStarport.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="T:WebApplication1.Models.OGameTypeBuilding">
+            <summary>
+            Define base building functionnalities.
+            </summary>
+        </member>
+        <member name="M:WebApplication1.Models.OGameTypeBuilding.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Models.OGameTypeBuilding.TypeBuilding">
+            <summary>
+            DB management of item sub type.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Models.OGameTypeBuilding.Name">
+            <summary>
+            Reference building identity.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Models.OGameTypeBuilding.Level">
+            <summary>
+            Define current building level.
+            </summary>
+        </member>
+        <member name="T:WebApplication1.Models.OGameWarship">
+            <summary>
+            Space ship use for battles.
+            </summary>
+        </member>
+        <member name="M:WebApplication1.Models.OGameWarship.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="T:WebApplication1.EnumManager.StringValueAttribute">
+            <summary>
+            This attribute is used to represent a string value
+            for a value in an enum.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.EnumManager.StringValueAttribute.StringValue">
+            <summary>
+            Holds the stringvalue for a value in an enum.
+            </summary>
+        </member>
+        <member name="M:WebApplication1.EnumManager.StringValueAttribute.#ctor(System.String)">
+            <summary>
+            Constructor used to init a StringValue Attribute
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:WebApplication1.EnumManager.EnumString.GetStringValue(System.Enum)">
+            <summary>
+            Will get the string value for a given enums value, this will
+            only work if you assign the StringValue attribute to
+            the items in your enum.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApplication1.Utils.Generator.EntityGeneratorFakerTyper`1.GenerateItem(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="inheritance"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
