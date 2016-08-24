@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
@@ -46,6 +47,7 @@ namespace WebApplication1.Models
         /// <summary>
         /// Allow to reconize the different ship type in DB.
         /// </summary>
+        [Range(1,2)]
         [FakerTyper(TypeEnumCustom.SHIP_TYPE)]
         public int ShipType
         {
@@ -55,6 +57,7 @@ namespace WebApplication1.Models
         /// <summary>
         /// Number of this ship type.
         /// </summary>
+        [Range(0, 200)]
         [FakerTyper(TypeEnumCustom.SHIP_QUANTITY)]
         public int Quantity
         {
@@ -65,6 +68,7 @@ namespace WebApplication1.Models
         /// <summary>
         /// Quantity of carriable resources.
         /// </summary>
+        [Range(0, 200)]
         [FakerTyper(TypeEnumCustom.SHIP_QUANTITY)]
         public int Bay
         {
@@ -75,6 +79,7 @@ namespace WebApplication1.Models
         /// <summary>
         /// Speed to navigate between planet.
         /// </summary>
+        [Range(0, 200)]
         [FakerTyper(TypeEnumCustom.SHIP_QUANTITY)]
         public int Speed
         {
@@ -85,6 +90,7 @@ namespace WebApplication1.Models
         /// <summary>
         /// Defence that reduce other space ship damage.
         /// </summary>
+        [Range(0, 200)]
         [FakerTyper(TypeEnumCustom.SHIP_QUANTITY)]
         public int Defence
         {
@@ -95,6 +101,7 @@ namespace WebApplication1.Models
         /// <summary>
         /// Attack to destroy other space ship
         /// </summary>
+        [Range(0, 200)]
         [FakerTyper(TypeEnumCustom.SHIP_QUANTITY)]
         public int Attack
         {
@@ -105,6 +112,7 @@ namespace WebApplication1.Models
         /// <summary>
         /// Name of space ship class.
         /// </summary>
+        [StringLength(20)]
         [FakerTyper(TypeEnumCustom.USERFIRSTNAME)]
         public String Name
         {

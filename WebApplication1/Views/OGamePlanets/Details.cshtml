@@ -1,0 +1,66 @@
+﻿@model WebApplication1.Models.OGamePlanet
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>OGamePlanet</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Coordinate.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Coordinate.Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fleet.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fleet.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Slot)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Slot)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+    </dl>
+</div>
+
+@{
+    if (Model.Buildings != null)
+    {
+        Html.RenderPartial("~/Views/OGameTypeBuildings/PartialViews/TypeBuild.cshtml", Model.Buildings);
+    }
+}
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

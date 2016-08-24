@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
@@ -49,6 +50,7 @@ namespace WebApplication1.Models
         /// <summary>
         /// DB management of item sub type.
         /// </summary>
+        [Range(1,3)]
         [FakerTyper(TypeEnumCustom.BUILDING_TYPE)]
         public int TypeBuilding
         {
@@ -58,6 +60,7 @@ namespace WebApplication1.Models
         /// <summary>
         /// Reference building identity.
         /// </summary>
+        [StringLength(20)]
         [FakerTyper(TypeEnumCustom.LOREUMONEWORD)]
         public String Name
         {
@@ -68,6 +71,7 @@ namespace WebApplication1.Models
         /// <summary>
         /// Define current building level.
         /// </summary>
+        [Range(0,20)]
         [FakerTyper(TypeEnumCustom.LEVEL)]
         public int Level
         {

@@ -87,6 +87,18 @@ namespace WebApplication1.Database
         {
             return await this.DbSetT.FindAsync(id);
         }
+
+        public async Task<IEnumerable<T>> Get()
+        {
+            DbSet<T> temp = default(DbSet<T>);
+            List<T> result = new List<T>();
+            await Task.Factory.StartNew(() =>
+            {
+                temp = base.Set<T>();
+            });
+            result.AddRange(temp);
+            return result;
+        }
         #endregion
 
         #region Events

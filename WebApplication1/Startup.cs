@@ -10,8 +10,8 @@ namespace WebApplication1
     {
         public void Configuration(IAppBuilder app)
         {
+            //DBInitializer initDb = new DBInitializer("DefaultConnection");
             ConfigureAuth(app);
-            DatabaseManager<OGameResource> manager = new DatabaseManager<OGameResource>();
         }
     }
 }

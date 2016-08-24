@@ -102,6 +102,7 @@ namespace WebApplication1.Models
         /// Define number of building for current planet.
         /// </summary>
         [FakerTyper(TypeEnumCustom.PLANET_SLOT)]
+        [Range(20,200)]
         public int Slot
         {
             get { return slot; }
@@ -112,6 +113,7 @@ namespace WebApplication1.Models
         /// Current name given by player to his planet.
         /// </summary>
         [FakerTyper(TypeEnumCustom.USERLASTNAME)]
+        [StringLength(20)]
         public String Name
         {
             get { return name; }

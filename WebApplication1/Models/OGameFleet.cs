@@ -76,6 +76,7 @@ namespace WebApplication1.Models
         /// <summary>
         /// Name of the fleet.
         /// </summary>
+        [StringLength(20)]
         public String Name
         {
             get { return name; }

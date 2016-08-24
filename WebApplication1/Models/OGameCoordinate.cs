@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using WebApplication1.Utils.Generator;
@@ -35,6 +36,7 @@ namespace WebApplication1.Models
         /// <summary>
         /// Y coordinate.
         /// </summary>
+        [Range(1,1000)]
         [FakerTyper(TypeEnumCustom.COORDINATE_Y)]
         public int Y
         {
@@ -45,6 +47,7 @@ namespace WebApplication1.Models
         /// <summary>
         /// X coordinate.
         /// </summary>
+        [Range(1, 1000)]
         [FakerTyper(TypeEnumCustom.COORDINATE_X)]
         public int X
         {

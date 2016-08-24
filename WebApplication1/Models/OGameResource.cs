@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
@@ -45,6 +46,7 @@ namespace WebApplication1.Models
         /// <summary>
         /// Resource type name.
         /// </summary>
+        [StringLength(20)]
         public String Type
         {
             get { return type; }
@@ -54,6 +56,7 @@ namespace WebApplication1.Models
         /// <summary>
         /// Quantity of current resource.
         /// </summary>
+        [Range(0,10000)]
         public int Quantity
         {
             get { return quantity; }

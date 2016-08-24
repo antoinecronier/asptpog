@@ -28,7 +28,7 @@ namespace WebApplication1.Database
         /// <param name="database">DB to target.</param>
         public DBInitializer(String database) : base(database)
         {
-            InitDB();
+            //InitDB();
         }
         #endregion
 
@@ -47,7 +47,15 @@ namespace WebApplication1.Database
         /// </summary>
         public async void InitDB()
         {
-            if (this.Database.CreateIfNotExists())
+            DatabaseManager<OGameCoordinate> coorDB = new DatabaseManager<OGameCoordinate>();
+            DatabaseManager<OGameFleet> fleetDB = new DatabaseManager<OGameFleet>();
+            DatabaseManager<OGamePlanet> planetDB = new DatabaseManager<OGamePlanet>();
+            DatabaseManager<OGameResource> resDB = new DatabaseManager<OGameResource>();
+            DatabaseManager<OGameSpaceShip> shipDB = new DatabaseManager<OGameSpaceShip>();
+            DatabaseManager<OGameTypeBuilding> buildingDB = new DatabaseManager<OGameTypeBuilding>();
+
+            //if (this.Database.CreateIfNotExists())
+            if ((await resDB.Get()).ToList().Count == 0)
             {
                 EntityGeneratorFakerTyper<OGameCoordinate> coorGen = new EntityGeneratorFakerTyper<OGameCoordinate>();
                 EntityGeneratorFakerTyper<OGameFleet> fleetGen = new EntityGeneratorFakerTyper<OGameFleet>();
@@ -55,13 +63,6 @@ namespace WebApplication1.Database
                 EntityGeneratorFakerTyper<OGameResource> resGen = new EntityGeneratorFakerTyper<OGameResource>();
                 EntityGeneratorFakerTyper<OGameSpaceShip> shipGen = new EntityGeneratorFakerTyper<OGameSpaceShip>();
                 EntityGeneratorFakerTyper<OGameTypeBuilding> buildingGen = new EntityGeneratorFakerTyper<OGameTypeBuilding>();
-
-                DatabaseManager<OGameCoordinate> coorDB = new DatabaseManager<OGameCoordinate>();
-                DatabaseManager<OGameFleet> fleetDB = new DatabaseManager<OGameFleet>();
-                DatabaseManager<OGamePlanet> planetDB = new DatabaseManager<OGamePlanet>();
-                DatabaseManager<OGameResource> resDB = new DatabaseManager<OGameResource>();
-                DatabaseManager<OGameSpaceShip> shipDB = new DatabaseManager<OGameSpaceShip>();
-                DatabaseManager<OGameTypeBuilding> buildingDB = new DatabaseManager<OGameTypeBuilding>();
 
                 List<OGameCoordinate> coorList = coorGen.GenerateListItems(10,10).ToList();
                 foreach (var item in coorList)

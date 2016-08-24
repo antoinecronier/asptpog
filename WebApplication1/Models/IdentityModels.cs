@@ -29,5 +29,17 @@ namespace WebApplication1.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<WebApplication1.Models.OGameCoordinate> OGameCoordinates { get; set; }
+
+        public System.Data.Entity.DbSet<WebApplication1.Models.OGameFleet> OGameFleets { get; set; }
+
+        public System.Data.Entity.DbSet<WebApplication1.Models.OGameSpaceShip> OGameSpaceShips { get; set; }
+
+        public System.Data.Entity.DbSet<WebApplication1.Models.OGamePlanet> OGamePlanets { get; set; }
+
+        public System.Data.Entity.DbSet<WebApplication1.Models.OGameResource> OGameResources { get; set; }
+
+        public System.Data.Entity.DbSet<WebApplication1.Models.OGameTypeBuilding> OGameTypeBuildings { get; set; }
     }
 }
