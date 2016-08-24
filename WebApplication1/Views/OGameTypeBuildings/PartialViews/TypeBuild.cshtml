@@ -25,8 +25,29 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
+                @if (item.Name.Contains("BitCoinMine"))
+                {
+                    String name = "BitCoinMineLvl";
+                    <td id=@name>
+                        @Html.DisplayFor(modelItem => item.Level)
+                    </td>
+                }
+                else if (item.Name.Contains("GoldMine"))
+                {
+                    String name = "GoldMineLvl";
+                    <td id=@name>
+                        @Html.DisplayFor(modelItem => item.Level)
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Level)
+                    </td>
+                }
+
                 <td>
-                    @Html.DisplayFor(modelItem => item.Level)
+                    @Html.ActionLink("Evolve", "Evolve", "OGamePlanets", new {buildingId = item.Id, planetId = ViewBag.Planet.Id}, null)
                 </td>
             </tr>
         }

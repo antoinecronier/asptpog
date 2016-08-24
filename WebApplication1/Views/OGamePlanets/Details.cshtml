@@ -54,6 +54,14 @@
 </div>
 
 @{
+    if (Model.Coordinate != null)
+    {
+        Html.RenderPartial("~/Views/OGameCoordinates/PartialViews/Coordinate.cshtml", Model.Coordinate);
+    }
+    if (Model.Resources != null)
+    {
+        Html.RenderPartial("~/Views/OGameResources/PartialViews/Resource.cshtml", Model.Resources);
+    }
     if (Model.Buildings != null)
     {
         Html.RenderPartial("~/Views/OGameTypeBuildings/PartialViews/TypeBuild.cshtml", Model.Buildings);
@@ -64,3 +72,5 @@
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+
+@Scripts.Render("~/bundles/OGamePlanetsDetails")

@@ -26,6 +26,12 @@ namespace WebApplication1
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+
+            #region OGamePlanetsDetails scripts
+            bundles.Add(new ScriptBundle("~/bundles/OGamePlanetsDetails").Include(
+                "~/Scripts/OGamePlanetsDetails/ResourcesManagement.js"));
+            #endregion
         }
     }
 }

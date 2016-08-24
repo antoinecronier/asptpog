@@ -18,6 +18,12 @@ namespace WebApplication1
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            //routes.MapRoute(
+            //    name: "Evolve",
+            //    url: "OGamePlanets/Evolve/{Building}/{Planet}",
+            //    defaults: new { controller = "OGamePlanets", action = "Evolve", Building = UrlParameter.Optional, Planet = UrlParameter.Optional }
+            //);
         }
     }
 }
